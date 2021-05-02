@@ -38,7 +38,7 @@ const Experiencia = () => {
                 {Experiencia.map(dato => (
                   <tr key={dato.id}>
                     <td>
-                      {dato.fechaInicio} - {dato.fechaFin}
+                      {dato.fechaInicio} - {dato.fechafin}
                     </td>
                     <td>{dato.empresa}</td>
                     <td>{dato.puesto}</td>
