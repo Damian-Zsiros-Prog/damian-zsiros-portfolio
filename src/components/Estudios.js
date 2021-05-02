@@ -43,8 +43,7 @@ const Estudios = () => {
             <table className="table table-striped">
               <thead>
                 <tr>
-                  <th>Fecha de Inicio</th>
-                  <th>Fecha de Fin</th>
+                  <th>Fecha</th>
                   <th>Lugar</th>
                   <th>Titulo</th>
                 </tr>
@@ -52,8 +51,9 @@ const Estudios = () => {
               <tbody>
                 {Estudios.map(dato => (
                   <tr key={dato.id}>
-                    <td>{dato.fechaInicio}</td>
-                    <td>{dato.fechaFin}</td>
+                    <td>
+                      {dato.fechaInicio} - {dato.fechaFin}
+                    </td>
                     <td>{dato.lugar}</td>
                     <td>{dato.titulo}</td>
                   </tr>
