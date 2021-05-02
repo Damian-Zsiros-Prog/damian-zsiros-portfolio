@@ -1,0 +1,98 @@
+.sidebar1 {
+  background: #212529;
+  padding: 0px;
+  min-height: 100vh;
+}
+.logo > a > img {
+  padding: 3px;
+  border: 3px solid white;
+  border-radius: 100%;
+  width: 50%;
+  margin: 30px auto;
+  display: flex;
+}
+.logo > h1 {
+  font-size: 25px;
+  text-align: center;
+  font-weight: bold;
+  color: #fff;
+}
+.left-navigation {
+  position: relative;
+}
+.list {
+  color: #fff;
+  list-style: none;
+  padding-left: 0px;
+}
+.list::first-line {
+  color: rgba(255, 255, 255, 0.5);
+}
+.list > li,
+h5 {
+  padding: 5px 0px 5px 40px;
+}
+.list > li:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-left: 5px solid white;
+  color: white;
+  font-weight: bolder;
+  padding-left: 35px;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.25);
+  transition: all 0.5s ease;
+}
+.list > li > a {
+  font-size: 20px;
+}
+
+.facebook:hover {
+  background-color: rgba(59, 89, 152) !important;
+  color: white;
+}
+.github:hover {
+  background-color: rgba(33, 31, 31) !important;
+  color: white;
+}
+.twitter:hover {
+  background: #00acee !important;
+  color: white;
+}
+.linkedin:hover {
+  background: #0e76a8 !important;
+  color: white;
+}
+.list > li > a {
+  text-decoration: none;
+  color: #fff;
+}
+.main-content {
+  text-align: center;
+}
+@media only screen and (max-width: 768px) {
+  .sidebar1 {
+    width: 300px;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .logo {
+    display: flex;
+    flex-direction: row;
+  }
+  .logo > a {
+    width: 50%;
+    padding: 10px;
+  }
+  .logo > a > img {
+    width: 100%;
+  }
+  .logo > h1 {
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+  }
+  .list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
