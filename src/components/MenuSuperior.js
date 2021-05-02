@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 
+import "./MenuSuperior.css";
+
 const MenuSuperior = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="navbar navbar-expand-lg navbar-light bg-light MenuSuperior">
       <button
         className="navbar-toggler"
         type="button"

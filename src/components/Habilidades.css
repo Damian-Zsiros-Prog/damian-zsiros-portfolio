@@ -5,9 +5,7 @@
   grid-gap: 25px;
 }
 .skill {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  margin: auto;
 }
 
 .skill h5 {
@@ -30,5 +28,6 @@
   }
   .skill {
     max-width: 230px;
+    margin: auto;
   }
 }
