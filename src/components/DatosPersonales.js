@@ -26,22 +26,24 @@ const DatosPersonales = () => {
       ) : (
         <div className="text-left">
           <h1>Datos Personales</h1>
-          <table className="table table-striped">
-            <thead>
-              <tr>
-                <th scope="col">Nombre</th>
-                <th scope="col">Valor</th>
-              </tr>
-            </thead>
-            <tbody>
-              {DatosPersonales.map(dato => (
-                <tr key={dato.id}>
-                  <td>{dato.name}</td>
-                  <td>{dato.value}</td>
+          <div className="table-responsive">
+            <table className="table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Valor</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {DatosPersonales.map(dato => (
+                  <tr key={dato.id}>
+                    <td>{dato.name}</td>
+                    <td>{dato.value}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       )}
     </div>

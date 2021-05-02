@@ -24,28 +24,30 @@ const Experiencia = () => {
       ) : (
         <div className="text-left">
           <h1>Experiencia</h1>
-          <table className="table table-striped">
-            <thead>
-              <tr>
-                <th scope="col">Fecha</th>
-                <th scope="col">Empresa</th>
-                <th scope="col">Puesto</th>
-                <th scope="col">Tareas puesto</th>
-              </tr>
-            </thead>
-            <tbody>
-              {Experiencia.map(dato => (
-                <tr key={dato.id}>
-                  <td>
-                    {dato.fechaInicio} - {dato.fechaFin}
-                  </td>
-                  <td>{dato.empresa}</td>
-                  <td>{dato.puesto}</td>
-                  <td>{dato.tareasPuesto}</td>
+          <div className="table-responsive">
+            <table className="table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">Fecha</th>
+                  <th scope="col">Empresa</th>
+                  <th scope="col">Puesto</th>
+                  <th scope="col">Tareas puesto</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {Experiencia.map(dato => (
+                  <tr key={dato.id}>
+                    <td>
+                      {dato.fechaInicio} - {dato.fechaFin}
+                    </td>
+                    <td>{dato.empresa}</td>
+                    <td>{dato.puesto}</td>
+                    <td>{dato.tareasPuesto}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       )}
     </div>
