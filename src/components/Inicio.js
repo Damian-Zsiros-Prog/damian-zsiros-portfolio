@@ -13,7 +13,7 @@ const Inicio = () => {
         <Loader />
       ) : (
         <div className="text-left inicio">
-          <h1>¡Bienvenidos a mi curriculum vitae!</h1>
+          <h1>¡Bienvenidos a mi portafolio!</h1>
           <p>
             Yo, Damian Zsiros Gonzalez, soy un informático que sueña con hacerse
             un hueco en el mundo de la informática. Sobre todo en el mundo de la
