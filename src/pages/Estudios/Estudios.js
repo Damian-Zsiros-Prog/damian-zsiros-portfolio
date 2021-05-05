@@ -1,36 +1,23 @@
 import "./Estudios.css";
-import db from "../../database";
 import Loader from "../../components/Loader/Loader";
 
-import { useState, useEffect } from "react";
+import EstudiosContext from "../../context/Estudios/EstudiosContext";
+
+import { useState, useEffect, useContext } from "react";
 
 const Estudios = () => {
-  const [Estudios, setEstudios] = useState([]);
-  const [Cursos, setCursos] = useState([]);
   const [IsLoading, setIsLoading] = useState(true);
-  const getAllHabilidades = async () => {
-    const response = db.collection("estudios");
-    const data = await response.get();
-    const docData = [];
-    data.docs.forEach(item => {
-      docData.push(item.data());
-    });
-    setEstudios(docData);
-  };
-  const getAllCursos = async () => {
-    const response = db.collection("cursos");
-    const data = await response.get();
-    const docData = [];
-    data.docs.forEach(item => {
-      docData.push(item.data());
-    });
-    setCursos(docData);
-    setIsLoading(false);
-  };
+  const { getEstudios, Estudios, Cursos, getCursos } = useContext(
+    EstudiosContext
+  );
+
   useEffect(() => {
-    getAllHabilidades();
-    getAllCursos();
-  }, []);
+    getEstudios();
+    getCursos();
+    setInterval(() => {
+      setIsLoading(false);
+    }, 400);
+  }, [getEstudios, getCursos]);
 
   return (
     <div>

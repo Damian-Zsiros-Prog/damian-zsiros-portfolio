@@ -19,6 +19,9 @@ import Repositorios from "./pages/Repositorios/Repositorios";
 // States
 import DatosPersonalesState from "./context/Datos Personales/DatosPersonalesState";
 import HabilidadesState from "./context/Habilidades/HabilidadesState";
+import EstudiosState from "./context/Estudios/EstudiosState";
+import ExperienciaState from "./context/Experiencia/ExperienciaState";
+import RepositoriosState from "./context/Repositorios/RepositoriosState";
 
 function App() {
   return (
@@ -31,16 +34,22 @@ function App() {
             <div className="container-fluid mt-4 pl-5 pl-5">
               <Switch>
                 <Route path="/repositorios">
-                  <Repositorios />
+                  <RepositoriosState>
+                    <Repositorios />
+                  </RepositoriosState>
                 </Route>
                 <Route path="/contacto">
                   <Contacto />
                 </Route>
                 <Route path="/experiencia">
-                  <Experiencia />
+                  <ExperienciaState>
+                    <Experiencia />
+                  </ExperienciaState>
                 </Route>
                 <Route path="/estudios">
-                  <Estudios />
+                  <EstudiosState>
+                    <Estudios />
+                  </EstudiosState>
                 </Route>
                 <Route path="/habilidades">
                   <HabilidadesState>
