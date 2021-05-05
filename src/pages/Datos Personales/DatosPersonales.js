@@ -1,20 +1,22 @@
 //Modules
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 // Components
 import Loader from "../../components/Loader/Loader";
-// Services
-import { getAllDatosPersonales } from "../../services/DatosPersonalesService";
+// Context
+import DatosPersonalesContext from "../../context/Datos Personales/DatosPersonalesContext";
 const DatosPersonales = () => {
-  const [DatosPersonales, setDatosPersonales] = useState([]);
   const [IsLoading, setIsLoading] = useState(true);
-  const getDatosPersonales = async () => {
-    const data = await getAllDatosPersonales();
-    setDatosPersonales(data);
-    setIsLoading(false);
-  };
+  const { getDatosPersonales, DatosPersonales } = useContext(
+    DatosPersonalesContext
+  );
+
   useEffect(() => {
     getDatosPersonales();
-  }, [DatosPersonales]);
+    setInterval(() => {
+      setIsLoading(false);
+    }, 400);
+  }, [getDatosPersonales, DatosPersonales]);
+
   return (
     <>
       {IsLoading ? (

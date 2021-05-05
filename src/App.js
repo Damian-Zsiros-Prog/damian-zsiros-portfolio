@@ -16,6 +16,9 @@ import Estudios from "./pages/Estudios/Estudios";
 import Experiencia from "./pages/Experiencia/Experiencia";
 import Contacto from "./pages/Contacto/Contacto";
 import Repositorios from "./pages/Repositorios/Repositorios";
+// States
+import DatosPersonalesState from "./context/Datos Personales/DatosPersonalesState";
+import HabilidadesState from "./context/Habilidades/HabilidadesState";
 
 function App() {
   return (
@@ -40,10 +43,14 @@ function App() {
                   <Estudios />
                 </Route>
                 <Route path="/habilidades">
-                  <Habilidades />
+                  <HabilidadesState>
+                    <Habilidades />
+                  </HabilidadesState>
                 </Route>
                 <Route path="/datos-personales">
-                  <DatosPersonales />
+                  <DatosPersonalesState>
+                    <DatosPersonales />
+                  </DatosPersonalesState>
                 </Route>
                 <Route path="/" component={Inicio} />
               </Switch>

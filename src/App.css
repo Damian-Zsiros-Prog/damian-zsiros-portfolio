@@ -13,3 +13,7 @@ tr th {
     font-size: 35px;
   }
 }
+
+table {
+  transition: 5ms all ease;
+}

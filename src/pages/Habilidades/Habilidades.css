@@ -7,6 +7,11 @@
 }
 .skill {
   margin: auto;
+  transition: 0.5s all ease;
+  cursor: pointer;
+}
+.skill:hover {
+  transform: scale(1.2);
 }
 
 .skill h5 {

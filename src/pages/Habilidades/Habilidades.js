@@ -1,27 +1,23 @@
 import "./Habilidades.css";
-import db from "../../database";
+
 import Loader from "../../components/Loader/Loader";
 
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+// Context
+import HabilidadesContext from "../../context/Habilidades/HabilidadesContext";
 
 const Habilidades = () => {
-  const [Habilidades, setHabilidades] = useState([]);
   const [IsLoading, setIsLoading] = useState(true);
-  const getAllHabilidades = async () => {
-    const response = db.collection("habilidades").orderBy("percentage", "desc");
-    const data = await response.get();
-    const docData = [];
-    data.docs.forEach(item => {
-      docData.push(item.data());
-    });
-    setHabilidades(docData);
-    setIsLoading(false);
-  };
+  const { getHabilidades, HabilidadesState } = useContext(HabilidadesContext);
+
   useEffect(() => {
-    getAllHabilidades();
-  }, []);
+    getHabilidades();
+    setInterval(() => {
+      setIsLoading(false);
+    }, 400);
+  }, [getHabilidades, HabilidadesState]);
   return (
     <div>
       {IsLoading ? (
@@ -30,8 +26,8 @@ const Habilidades = () => {
         <div>
           <h1>Habilidades</h1>
           <div className="container-grid1">
-            {Habilidades.map(habilidad => (
-              <div className="skill">
+            {HabilidadesState.map(habilidad => (
+              <div className="skill" key={habilidad.key}>
                 <h5>{habilidad.name}</h5>
                 <CircularProgressbar
                   className="progesoCircular"
