@@ -30,7 +30,7 @@ const HabilidadesState = props => {
   return (
     <ExperienciaContext.Provider
       value={{
-        HabilidadesState: ExperienciaState.ExperienciaArray,
+        Experiencia: ExperienciaState.ExperienciaArray,
         getExperiencia
       }}
     >

@@ -1,22 +1,19 @@
 import db from "../../database";
 import Loader from "../../components/Loader/Loader";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+
+// Context
+import ExperienciaContext from "../../context/Experiencia/ExperienciaContext";
 const Experiencia = () => {
-  const [Experiencia, setExperiencia] = useState([]);
   const [IsLoading, setIsLoading] = useState(true);
-  const getAllCursos = async () => {
-    const response = db.collection("experiencia");
-    const data = await response.get();
-    const docData = [];
-    data.docs.forEach(item => {
-      docData.push(item.data());
-    });
-    setExperiencia(docData);
-    setIsLoading(false);
-  };
+  const { Experiencia, getExperiencia } = useContext(ExperienciaContext);
+
   useEffect(() => {
-    getAllCursos();
-  }, []);
+    getExperiencia();
+    setInterval(() => {
+      setIsLoading(false);
+    }, 400);
+  }, [getExperiencia]);
   return (
     <div>
       {IsLoading ? (
