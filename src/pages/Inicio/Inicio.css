@@ -1,0 +1,22 @@
+.inicio {
+  padding: 10px;
+}
+h1 {
+  font-weight: bold;
+  font-size: 50px;
+}
+
+.inicio p {
+  font-size: 18px;
+}
+
+@media screen and (min-width: 2560px) {
+  h1 {
+    font-weight: bold;
+    font-size: 70px;
+  }
+
+  .inicio p {
+    font-size: 30px;
+  }
+}

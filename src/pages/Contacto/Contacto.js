@@ -1,5 +1,6 @@
-import Loader from "./Loader";
+import Loader from "../../components/Loader/Loader";
 import { useState } from "react";
+import "./Contacto.css";
 const Contacto = () => {
   const [IsLoading, setIsLoading] = useState(true);
   const [DataContacto, setDataContacto] = useState({
@@ -35,7 +36,7 @@ const Contacto = () => {
       {IsLoading ? (
         <Loader />
       ) : (
-        <div className="text-left container-fluid p-5">
+        <div className="text-left container-fluid p-5 contacto">
           <h1 className="text-center">Contacto</h1>
           <form onSubmit={e => handleSubmit(e)}>
             <div className="form-group">

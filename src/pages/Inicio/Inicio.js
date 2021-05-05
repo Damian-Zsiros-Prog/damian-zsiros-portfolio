@@ -1,6 +1,7 @@
 import "./Inicio.css";
-import Loader from "./Loader";
+import Loader from "../../components/Loader/Loader";
 import { useState } from "react";
+
 const Inicio = () => {
   const [IsLoading, setIsLoading] = useState(true);
 

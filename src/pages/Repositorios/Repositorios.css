@@ -1,3 +1,8 @@
+.container-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 25px;
+}
 .repos .card .card-title {
   padding: 0;
   font-weight: bold;
@@ -11,7 +16,7 @@
 
 @media only screen and (max-width: 1400px) {
   .container-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
   .skill {
     max-width: 200px;

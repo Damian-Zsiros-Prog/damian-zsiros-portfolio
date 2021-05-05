@@ -1,6 +1,6 @@
 import "./Estudios.css";
-import db from "../database";
-import Loader from "./Loader";
+import db from "../../database";
+import Loader from "../../components/Loader/Loader";
 
 import { useState, useEffect } from "react";
 

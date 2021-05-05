@@ -1,6 +1,6 @@
 import "./Habilidades.css";
-import db from "../database";
-import Loader from "./Loader";
+import db from "../../database";
+import Loader from "../../components/Loader/Loader";
 
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
@@ -29,7 +29,7 @@ const Habilidades = () => {
       ) : (
         <div>
           <h1>Habilidades</h1>
-          <div className="container-grid">
+          <div className="container-grid1">
             {Habilidades.map(habilidad => (
               <div className="skill">
                 <h5>{habilidad.name}</h5>

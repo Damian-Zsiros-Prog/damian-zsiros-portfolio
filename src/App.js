@@ -7,15 +7,15 @@ import "bootstrap/dist/js/bootstrap";
 import "font-awesome/css/font-awesome.min.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import Sidebar from "./components/Sidebar";
-import DatosPersonales from "./components/DatosPersonales";
-import MenuSuperior from "./components/MenuSuperior";
-import Inicio from "./components/Inicio";
-import Habilidades from "./components/Habilidades";
-import Estudios from "./components/Estudios";
-import Experiencia from "./components/Experiencia";
-import Contacto from "./components/Contacto";
-import Repositorios from "./components/Repositorios";
+import Sidebar from "./components/Sidebar/Sidebar";
+import DatosPersonales from "./pages/Datos Personales/DatosPersonales";
+import MenuSuperior from "./components/Menu Superior/MenuSuperior";
+import Inicio from "./pages/Inicio/Inicio";
+import Habilidades from "./pages/Habilidades/Habilidades";
+import Estudios from "./pages/Estudios/Estudios";
+import Experiencia from "./pages/Experiencia/Experiencia";
+import Contacto from "./pages/Contacto/Contacto";
+import Repositorios from "./pages/Repositorios/Repositorios";
 
 function App() {
   return (
@@ -25,7 +25,7 @@ function App() {
           <Sidebar />
           <div className="col-md-9 col-sm-8 main-content p-0">
             <MenuSuperior />
-            <div className="container-fluid mt-4 container">
+            <div className="container-fluid mt-4 pl-5 pl-5">
               <Switch>
                 <Route path="/repositorios">
                   <Repositorios />

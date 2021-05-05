@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Loader from "./Loader";
+import Loader from "../../components/Loader/Loader";
 
 import "./Repositorios.css";
 const Repositorios = () => {
@@ -27,10 +27,7 @@ const Repositorios = () => {
       {IsLoading ? (
         <Loader />
       ) : (
-        <div
-          className="container-grid repos"
-          style={{ gridTemplateColumns: "1fr 1fr 1fr" }}
-        >
+        <div className="container-grid repos" style={{ padding: "-5px" }}>
           {repositorios.map(repositorio => (
             <div className="card" style={{ width: "18rem" }}>
               <div className="card-body">

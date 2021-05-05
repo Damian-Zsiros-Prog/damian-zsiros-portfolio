@@ -1,0 +1,31 @@
+.contacto h1 {
+  font-size: 50px;
+}
+.contacto form input,
+.contacto form textarea,
+.contacto form button,
+.contacto form label {
+  font-size: 25px;
+}
+@media screen and (min-width: 2000px) {
+  .contacto h1 {
+    font-size: 80px;
+  }
+  .contacto form input,
+  .contacto form textarea,
+  .contacto form button,
+  .contacto form label {
+    font-size: 30px;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .contacto h1 {
+    font-size: 40px;
+  }
+  .contacto form input,
+  .contacto form textarea,
+  .contacto form button,
+  .contacto form label {
+    font-size: 16px;
+  }
+}

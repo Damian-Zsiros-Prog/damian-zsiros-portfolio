@@ -68,6 +68,23 @@ h5 {
 .main-content {
   text-align: center;
 }
+@media only screen and (min-width: 2200px) {
+  .logo > h1 {
+    font-size: 40px !important;
+  }
+  .list > li > a {
+    font-size: 35px !important;
+  }
+}
+@media only screen and (min-width: 1500px) {
+  .logo > h1 {
+    font-size: 35px !important;
+  }
+  .list > li > a {
+    font-size: 25px;
+  }
+}
+
 @media only screen and (max-width: 768px) {
   .sidebar1 {
     width: 300px;

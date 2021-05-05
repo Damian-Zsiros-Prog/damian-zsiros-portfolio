@@ -1,8 +1,9 @@
-.container-grid {
+.container-grid1 {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
 
   grid-gap: 25px;
+  width: 80%;
 }
 .skill {
   margin: auto;
@@ -15,7 +16,7 @@
 }
 
 @media only screen and (max-width: 968px) {
-  .container-grid {
+  .container-grid1 {
     grid-template-columns: repeat(3, 1fr);
   }
   .skill {
@@ -23,11 +24,27 @@
   }
 }
 @media only screen and (max-width: 768px) {
-  .container-grid {
+  .container-grid1 {
     grid-template-columns: repeat(2, 1fr);
   }
   .skill {
     max-width: 230px;
     margin: auto;
+  }
+}
+@media only screen and (min-width: 2200px) {
+  .container-grid1 {
+    grid-template-columns: repeat(8, 1fr);
+  }
+  .skill {
+    width: 150px;
+  }
+  .container {
+    max-width: 80%;
+  }
+}
+@media only screen and (min-width: 2560px) {
+  .skill {
+    width: 200px;
   }
 }

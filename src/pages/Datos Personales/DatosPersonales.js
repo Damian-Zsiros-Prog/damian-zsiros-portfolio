@@ -1,8 +1,9 @@
-import db from "../database";
-import React from "react";
+//Modules
 import { useState, useEffect } from "react";
-
-import Loader from "./Loader";
+// Db
+import db from "../../database";
+// Components
+import Loader from "../../components/Loader/Loader";
 const DatosPersonales = () => {
   const [DatosPersonales, setDatosPersonales] = useState([]);
   const [IsLoading, setIsLoading] = useState(true);
@@ -18,9 +19,9 @@ const DatosPersonales = () => {
   };
   useEffect(() => {
     getAllDatosPersonales();
-  }, []);
+  }, [DatosPersonales]);
   return (
-    <div>
+    <>
       {IsLoading ? (
         <Loader />
       ) : (
@@ -46,7 +47,7 @@ const DatosPersonales = () => {
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 };
 export default DatosPersonales;

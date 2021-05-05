@@ -1,5 +1,5 @@
-import db from "../database";
-import Loader from "./Loader";
+import db from "../../database";
+import Loader from "../../components/Loader/Loader";
 import { useState, useEffect } from "react";
 const Experiencia = () => {
   const [Experiencia, setExperiencia] = useState([]);
