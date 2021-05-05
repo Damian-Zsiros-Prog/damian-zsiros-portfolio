@@ -1,24 +1,19 @@
 //Modules
 import { useState, useEffect } from "react";
-// Db
-import db from "../../database";
 // Components
 import Loader from "../../components/Loader/Loader";
+// Services
+import { getAllDatosPersonales } from "../../services/DatosPersonalesService";
 const DatosPersonales = () => {
   const [DatosPersonales, setDatosPersonales] = useState([]);
   const [IsLoading, setIsLoading] = useState(true);
-  const getAllDatosPersonales = async () => {
-    const response = db.collection("datos-personales").orderBy("key", "asc");
-    const data = await response.get();
-    const docData = [];
-    data.docs.forEach(item => {
-      docData.push(item.data());
-    });
-    setDatosPersonales(docData);
+  const getDatosPersonales = async () => {
+    const data = await getAllDatosPersonales();
+    setDatosPersonales(data);
     setIsLoading(false);
   };
   useEffect(() => {
-    getAllDatosPersonales();
+    getDatosPersonales();
   }, [DatosPersonales]);
   return (
     <>
@@ -37,7 +32,7 @@ const DatosPersonales = () => {
               </thead>
               <tbody>
                 {DatosPersonales.map(dato => (
-                  <tr key={dato.id}>
+                  <tr key={dato.key}>
                     <td>{dato.name}</td>
                     <td>{dato.value}</td>
                   </tr>
