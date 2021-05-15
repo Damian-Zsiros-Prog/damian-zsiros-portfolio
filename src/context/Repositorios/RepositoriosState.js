@@ -22,12 +22,10 @@ const RepositoriosState = props => {
       }
     );
     const data = await res.json();
-    // setTimeout(() => {
-    //   setIsLoading(false);
-    // }, 600);
+    const arrayData = Array.from(data);
     dispatch({
       type: "GET_REPOSITORIOS",
-      payload: data
+      payload: arrayData
     });
   };
 

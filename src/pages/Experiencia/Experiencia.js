@@ -1,4 +1,3 @@
-import db from "../../database";
 import Loader from "../../components/Loader/Loader";
 import { useState, useEffect, useContext } from "react";
 
