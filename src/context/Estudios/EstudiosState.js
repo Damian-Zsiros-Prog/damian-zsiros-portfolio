@@ -34,7 +34,7 @@ const EstudiosState = props => {
   };
   const getCursos = async () => {
     const response = db.collection("cursos");
-    const data = await response.get();
+    const data = await response.orderBy("año", "desc").get();
     const docData = [];
     data.docs.forEach(item => {
       docData.push(item.data());
