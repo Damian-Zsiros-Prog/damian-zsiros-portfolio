@@ -9,6 +9,10 @@ const Repositorios = () => {
   const { Repositorios, getRepositorios } = useContext(RepositoriosContext);
 
   useEffect(() => {
+    document.title =
+      "Repositorios - Damian Zsiros Gonzalez - Web Developer - Cartagena de Indias";
+  }, []);
+  useEffect(() => {
     getRepositorios();
     setInterval(() => {
       setIsLoading(false);

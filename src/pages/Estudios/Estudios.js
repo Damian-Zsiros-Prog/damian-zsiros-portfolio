@@ -11,6 +11,10 @@ const Estudios = () => {
     useContext(EstudiosContext);
 
   useEffect(() => {
+    document.title =
+      "Estudios - Damian Zsiros Gonzalez - Web Developer - Cartagena de Indias";
+  }, []);
+  useEffect(() => {
     getEstudios();
     getCursos();
     setInterval(() => {
@@ -51,7 +55,13 @@ const Estudios = () => {
                           {dato.lugar}
                         </a>
                       ) : (
-                        <a href="">{dato.lugar}</a>
+                        <a
+                          href={dato.link_lugar}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {dato.lugar}
+                        </a>
                       )}
                     </td>
                     <td>{dato.titulo}</td>

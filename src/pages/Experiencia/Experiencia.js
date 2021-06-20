@@ -8,6 +8,10 @@ const Experiencia = () => {
   const { Experiencia, getExperiencia } = useContext(ExperienciaContext);
 
   useEffect(() => {
+    document.title =
+      "Experiencia - Damian Zsiros Gonzalez - Web Developer - Cartagena de Indias";
+  }, []);
+  useEffect(() => {
     getExperiencia();
     setInterval(() => {
       setIsLoading(false);

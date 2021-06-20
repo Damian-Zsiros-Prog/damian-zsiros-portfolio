@@ -5,6 +5,10 @@ import Loader from "../../components/Loader/Loader";
 // Context
 import DatosPersonalesContext from "../../context/Datos Personales/DatosPersonalesContext";
 const DatosPersonales = () => {
+  useEffect(() => {
+    document.title =
+      "Datos Personales - Damian Zsiros Gonzalez - Web Developer - Cartagena de Indias";
+  });
   const [IsLoading, setIsLoading] = useState(true);
   const { getDatosPersonales, DatosPersonales } = useContext(
     DatosPersonalesContext

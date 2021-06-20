@@ -1,5 +1,5 @@
 import Loader from "../../components/Loader/Loader";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./Contacto.css";
 const Contacto = () => {
   const [IsLoading, setIsLoading] = useState(true);
@@ -8,6 +8,10 @@ const Contacto = () => {
     mensaje: ""
   });
 
+  useEffect(() => {
+    document.title =
+      "Contacto - Damian Zsiros Gonzalez - Web Developer - Cartagena de Indias";
+  }, []);
   const handleSubmit = e => {
     e.preventDefault();
     window.open(

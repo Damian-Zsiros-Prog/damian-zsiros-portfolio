@@ -1,6 +1,6 @@
 import "./Inicio.css";
 import Loader from "../../components/Loader/Loader";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Inicio = () => {
   const [IsLoading, setIsLoading] = useState(true);
@@ -8,6 +8,12 @@ const Inicio = () => {
   setTimeout(() => {
     setIsLoading(false);
   }, 600);
+
+  useEffect(() => {
+    document.title =
+      "Damian Zsiros Gonzalez - Web Developer - Cartagena de Indias";
+  });
+
   return (
     <div>
       {IsLoading ? (
