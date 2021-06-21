@@ -15,7 +15,7 @@ const Habilidades = () => {
   useEffect(() => {
     document.title =
       "Habilidades - Damian Zsiros Gonzalez - Web Developer - Cartagena de Indias";
-  }, [document.title]);
+  }, []);
   useEffect(() => {
     getHabilidades();
     setInterval(() => {
