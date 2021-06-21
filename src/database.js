@@ -1,13 +1,17 @@
 import firebase from "firebase";
+import dotenv from "dotenv";
+
+dotenv.config();
+console.log(process.env);
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBqRBO1yxMBFdIIo1qbO8xp6LqyCx50UOw",
-  authDomain: "damian-zsiros-cv-744bc.firebaseapp.com",
-  projectId: "damian-zsiros-cv-744bc",
-  storageBucket: "damian-zsiros-cv-744bc.appspot.com",
-  messagingSenderId: "43641465837",
-  appId: "1:43641465837:web:f52702e52715bcc308d5e4",
-  measurementId: "G-8VYVN9C6GL"
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID,
+  measurementId: process.env.REACT_APP_MEASUREMENT_ID
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
