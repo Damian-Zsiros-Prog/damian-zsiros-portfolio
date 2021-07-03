@@ -5,19 +5,30 @@ import "./Repositorios.css";
 // Context
 import RepositoriosContext from "../../context/Repositorios/RepositoriosContext";
 const Repositorios = () => {
+  const [ReposActuales, setReposActuales] = useState([]);
+  const [page, setpage] = useState(0);
   const [IsLoading, setIsLoading] = useState(true);
-  const { Repositorios, getRepositorios } = useContext(RepositoriosContext);
+  const { Repositorios, getRepositorios, lengthRepos } =
+    useContext(RepositoriosContext);
 
   useEffect(() => {
     document.title =
       "Repositorios - Damian Zsiros Gonzalez - Web Developer - Cartagena de Indias";
   }, []);
   useEffect(() => {
-    getRepositorios();
+    getRepositorios(page);
+    setReposActuales(Repositorios);
     setInterval(() => {
       setIsLoading(false);
     }, 400);
-  }, [getRepositorios]);
+  }, [Repositorios, getRepositorios, page]);
+
+  const handleNextPage = () => {
+    setpage(page + 1);
+  };
+  const handlePrevPage = () => {
+    setpage(page - 1);
+  };
 
   return (
     <div>
@@ -26,8 +37,12 @@ const Repositorios = () => {
       ) : (
         <>
           <div className="container-grid repos" style={{ padding: "-5px" }}>
-            {Repositorios.map(repositorio => (
-              <div className="card" style={{ width: "18rem" }}>
+            {Repositorios.map((repositorio) => (
+              <div
+                className="card"
+                style={{ width: "18rem" }}
+                key={repositorio.id}
+              >
                 <div className="card-body">
                   <h5 className="card-title">{repositorio.name}</h5>
                   <p className="card-text">{repositorio.description}</p>
@@ -43,23 +58,35 @@ const Repositorios = () => {
               </div>
             ))}
           </div>
-          {/* <div className="w-100 ">
-            <nav aria-label="Repositorios pagination nav" className="">
-              <ul className="pagination display-flex justify-content-center">
-                <li className="page-item">
-                  <button className="page-link">Previous</button>
-                </li>
-                <li className="page-item">
-                  <button
-                    className="page-link"
-                    onClick={() => handleClickNextPage()}
-                  >
-                    Next
-                  </button>
-                </li>
-              </ul>
-            </nav>
-          </div> */}
+
+          <div className="mt-3">
+            {page > 0 ? (
+              <button
+                type="button"
+                className="btn btn-primary mr-2"
+                onClick={() => handlePrevPage()}
+              >
+                Anterior pagina
+              </button>
+            ) : (
+              <button type="button" className="btn btn-primary mr-2" disabled>
+                Anterior pagina
+              </button>
+            )}
+            {page !== lengthRepos ? (
+              <button
+                type="button"
+                className="btn btn-success"
+                onClick={() => handleNextPage()}
+              >
+                Siguiente pagina
+              </button>
+            ) : (
+              <button type="button" className="btn btn-success" disabled>
+                Siguiente pagina
+              </button>
+            )}
+          </div>
         </>
       )}
     </div>

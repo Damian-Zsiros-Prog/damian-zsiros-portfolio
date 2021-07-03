@@ -1,31 +1,35 @@
-import React, { useReducer } from "react";
+import React, { useReducer, useState, useEffect } from "react";
 
 import RepositoriosReducer from "./RepositoriosReducer";
 import RepositoriosContext from "./RepositoriosContext";
 
-const RepositoriosState = props => {
+const RepositoriosState = (props) => {
   const initialState = {
-    RepositoriosArray: []
+    RepositoriosArray: [],
+    length: 0,
   };
+
+  const [lengthRepositorios, setlengthRepositorios] = useState(0);
 
   const [RepositoriosState, dispatch] = useReducer(
     RepositoriosReducer,
     initialState
   );
 
-  const getRepositorios = async () => {
+  const getRepositorios = async (page) => {
     const res = await fetch(
       "https://api.github.com/users/Damian-Zsiros-Prog/repos",
       {
         method: "GET",
-        username: "Damian-Zsiros-Prog"
+        username: "Damian-Zsiros-Prog",
       }
     );
     const data = await res.json();
-    const arrayData = Array.from(data);
+    setlengthRepositorios(data.length);
+    const arrayData = data.slice(page, 6 + page);
     dispatch({
       type: "GET_REPOSITORIOS",
-      payload: arrayData
+      payload: arrayData,
     });
   };
 
@@ -33,7 +37,8 @@ const RepositoriosState = props => {
     <RepositoriosContext.Provider
       value={{
         Repositorios: RepositoriosState.RepositoriosArray,
-        getRepositorios
+        getRepositorios,
+        lengthRepos: lengthRepositorios,
       }}
     >
       {props.children}
