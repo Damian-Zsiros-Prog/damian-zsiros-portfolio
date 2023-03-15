@@ -1,34 +1,34 @@
 export const tecnologies = [
   {
     name: 'React Js',
-    pathLogo: ''
+    slug: 'react'
   },
   {
     name: 'Node Js',
-    pathLogo: ''
+    slug: 'node-js'
   },
   {
     name: 'Astro',
-    pathLogo: ''
+    slug: 'astro'
   },
   {
     name: 'MongoDB',
-    pathLogo: ''
+    slug: 'mongodb'
   },
   {
     name: 'MySQL',
-    pathLogo: ''
+    slug: 'mysql'
   },
   {
     name: 'PHP',
-    pathLogo: ''
+    slug: 'php'
   },
   {
     name: 'VB.NET',
-    pathLogo: ''
+    slug: 'vb-net'
   },
   {
     name: 'Java',
-    pathLogo: ''
+    slug: 'java'
   }
 ]
