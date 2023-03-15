@@ -11,5 +11,13 @@
   },
   "dependencies": {
     "astro": "^2.0.18"
+  },
+  "devDependencies": {
+    "standard": "^17.0.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "./node_modules/standard/eslintrc.json"
+    ]
   }
 }
